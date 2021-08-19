@@ -17,7 +17,7 @@ def run_npm(npm_output_file_path, npm_run_scripts):
     npm_output_file_path:
         String
     npm_run_scripts:
-        List of scripts in package.json 
+        List of scripts in package.json
     """
     try:
         with open(npm_output_file_path, 'w') as npm_output_file:
@@ -31,7 +31,7 @@ def run_npm(npm_output_file_path, npm_run_scripts):
             ])
 
             for script in npm_run_scripts:
-                sh.npm(
+                sh.npm( # pylint: disable=no-member
                     'run',
                     script,
                     _out=out_callback,

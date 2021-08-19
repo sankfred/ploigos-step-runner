@@ -1,9 +1,9 @@
-"""`StepImplementer` for the `unit-test` step using npm 
+"""`StepImplementer` for the `unit-test` step using npm
 
 """
-from ploigos_step_runner.step_implementers.shared.npm_generic import NpmGeneric
 import sh
 from ploigos_step_runner import StepResult
+from ploigos_step_runner.step_implementers.shared.npm_generic import NpmGeneric
 
 DEFAULT_CONFIG = {
     'package-file': 'package.json'
@@ -17,7 +17,13 @@ class Npm(NpmGeneric):
     """
 
     def __init__(self, workflow_result, parent_work_dir_path, config, environment):
-        super().__init__(workflow_result, parent_work_dir_path, config, environment=environment, npm_run_scripts=['test'])
+        super().__init__(
+            workflow_result,
+            parent_work_dir_path,
+            config,
+            environment=environment,
+            npm_run_scripts=['test']
+        )
 
     @staticmethod
     def step_implementer_config_defaults():
