@@ -7,7 +7,6 @@ from ploigos_step_runner.exceptions import StepRunnerException
 from ploigos_step_runner.utils.io import \
     create_sh_redirect_to_multiple_streams_fn_callback
 
-
 def run_npm(npm_output_file_path, npm_run_scripts):
     """
     Use npm command to run a script in package.json
